@@ -9,6 +9,6 @@ jobs:
   triage:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/labeler@v3
+    - uses: ArtificialAmateur/cpp-linter-action@0.01
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
