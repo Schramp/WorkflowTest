@@ -40,5 +40,8 @@ jobs:
       - name: Build
         run: g++ hello.c
 
+      - name: Hostkey 
+        run: ssh-keyscan -H  ${{ secrets.SCP_HOST }} >> .ssh/known_hosts
+        
       - name: Upload
-        run: scp a.out ruud@83.84.200.246:/tmp/blah
+        run: scp a.out ${{ secrets.SCP_TARGET }}
