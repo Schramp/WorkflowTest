@@ -10,6 +10,9 @@ jobs:
   c-linter:
     name: c-linter
     runs-on: ubuntu-latest
+    env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       ##########################
       # Checkout the code base #
@@ -23,11 +26,17 @@ jobs:
       ################################
       # Run Linter against code base #
       ################################
-      - name: Lint Code Base
-        uses: github/super-linter@v4
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #- name: Lint Code Base
+      #  uses: github/super-linter@v4
+      #  env:
+      #    VALIDATE_ALL_CODEBASE: false
+      #    DEFAULT_BRANCH: main
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build
+        run: g++ hello.c
+
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: a.out
