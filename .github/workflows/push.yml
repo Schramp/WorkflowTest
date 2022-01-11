@@ -10,5 +10,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: ArtificialAmateur/cpp-linter-action@0.01
-      with:
-        repo-token: "${{ secrets.GITHUB_TOKEN }}"
