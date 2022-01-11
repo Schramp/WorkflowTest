@@ -1,5 +1,4 @@
-/* Copyright [2021] <ruud@schramp.com>
-*/
+/* Copyright [2021] <ruud@schramp.com> */
 
 #include <stdio.h>
 
