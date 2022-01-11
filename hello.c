@@ -1,3 +1,7 @@
+/* 
+   Copyright [2021] <ruud@schramp.com>
+*/
+
 #include <stdio.h>
 
 int main(int argc, char **argv) {
