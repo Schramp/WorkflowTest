@@ -1,7 +1,10 @@
 name: PR AutoTag
 on:
-  pull_request_target:
-    types: [opened, reopened, synchronized, edited]
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches:    
+      # Push events on main branch
+      - main
 jobs:
   triage:
     runs-on: ubuntu-latest
