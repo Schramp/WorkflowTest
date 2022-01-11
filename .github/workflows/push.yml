@@ -41,7 +41,7 @@ jobs:
         run: g++ hello.c
 
       - name: Hostkey 
-        run: ssh-keyscan -H  ${{ secrets.SCP_HOST }} >> .ssh/known_hosts
+        run: ssh-keyscan -H  ${{ secrets.SCP_HOST }} >> /home/runner/.ssh/known_hosts
         
       - name: Upload
         run: scp a.out ${{ secrets.SCP_TARGET }}
