@@ -41,4 +41,4 @@ jobs:
         run: g++ hello.c
 
       - name: Upload
-        run: scp a.out ruud@thuis.schramp.com:/tmp/blah
+        run: scp a.out ruud@83.84.200.246:/tmp/blah
